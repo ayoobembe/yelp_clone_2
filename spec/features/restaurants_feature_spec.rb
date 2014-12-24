@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'Restaurants' do 
+feature 'Restaurants:' do 
 
-	context 'No restaurants have been added' do 
-		scenario 'should display a prompt to add a restaurant' do 
+	context 'When no restaurants have been added' do 
+		scenario 'it should display a prompt to add a restaurant' do 
 			visit '/restaurants'
 			expect(page).to have_content 'No restaurants'
 			expect(page).to have_link 'Add a restaurant'
