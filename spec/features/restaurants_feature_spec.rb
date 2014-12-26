@@ -43,5 +43,42 @@ feature 'Restaurants:' do
 		end
 	end
 
+	context 'When editing restaurants' do 
+		before {Restaurant.create(name: 'KFC')}
+
+		scenario 'it allows the user to modify the details of a restaurant' do 
+			visit '/restaurants'
+			click_link 'Edit KFC'
+			fill_in 'Name', with: 'Kentucky Fried Chicken'
+			click_button 'Update Restaurant'
+			expect(page).to have_content 'Kentucky Fried Chicken'
+			expect(current_path).to eq '/restaurants'
+		end
+	end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
