@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   # get 'restaurants' => 'restaurants#index'
-  resources :restaurants
+  # read more on nested resources
+  resources :restaurants do 
+    resources :reviews
+  end
+
   # what exactly do prefixes in bin/rake routes mean?
   # what exactly does (:.format) mean?
 
